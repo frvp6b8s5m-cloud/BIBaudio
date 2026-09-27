@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Bplugins // Curator Admission</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="auth-page">
+
+  <!-- PART 1: PRIVATE TERMINAL -->
+  <main class="auth-shell">
+    <div class="auth-corner auth-corner-a">[FLOW_AXIS // PRIVATE_CHANNEL]</div>
+    <div class="auth-corner auth-corner-b">[BZAUDIO // ADMISSION]</div>
+
+    <section class="auth-card glass-panel">
+      <a class="back-link" href="./index.html">← RETURN_TO_FLOOR</a>
+      <div class="auth-icon">♙</div>
+      <p class="eyebrow">SECURE ARTIST GATEWAY / CURATOR</p>
+      <h1>ARTIST_CORE_LOGIN</h1>
+      <p class="auth-subtitle">Curator admission. Hash verified in the browser before the dashboard is opened.</p>
+      <form id="admin-login-form" autocomplete="off">
+        <label for="admin-username">ARTIST_ID //</label>
+        <input id="admin-username" name="username" autocomplete="username" required>
+        <label for="admin-password">SECURE_KEY //</label>
+        <input id="admin-password" name="password" type="password" autocomplete="current-password" required>
+        <button class="primary-command" type="submit">[INITIALIZE_ENGINE]</button>
+        <p id="admin-login-status" class="status-line" role="alert">[GATE // READY]</p>
+      </form>
+      <div class="auth-meter"><span></span></div>
+      <div class="auth-footer"><span>SHA-256</span><span>SESSION</span><span>PRIVATE_ROUTE</span></div>
+    </section>
+
+    <!-- PART 2: GATEWAY NOTES -->
+    <aside class="auth-note glass-panel">
+      <p class="eyebrow">PRIVATE_ROUTE</p>
+      <p>The public navigation never exposes this page. On the public page, typing <code>bza</code> opens this terminal.</p>
+      <p class="muted">This static GitHub build intentionally keeps curator authentication client-side. It is not a replacement for server-side authorization for a production business.</p>
+    </aside>
+
+    <!-- PART 3: AUTH ENGINE -->
+    <script src="./login-engine.js" defer></script>
+  </main>
+</body>
+</html>

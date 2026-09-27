@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bplugins // BZaudio — an independent audio plugin exchange.">
+  <title>Bplugins // BZaudio</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <!-- PART 1: PUBLIC SHELL -->
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Bplugins home">BPLUGINS <span>//</span> BZAUDIO</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#home" data-view="home">HOME</a>
+      <a href="#shop" data-view="shop">SHOP</a>
+      <a href="#about" data-view="about">ABOUT US</a>
+      <a href="#contact" data-view="contact">CONTACT</a>
+    </nav>
+    <div class="header-user">
+      <button id="account-button" class="ghost-button" type="button">[ACCOUNT]</button>
+      <button id="logout-button" class="ghost-button hidden" type="button">[LOGOUT]</button>
+    </div>
+  </header>
+
+  <div class="corner-code corner-a">[FLOW_AXIS // WAVE_ACTIVE]</div>
+  <div class="corner-code corner-b">[BZAUDIO // SIGNAL_FLOOR]</div>
+  <div class="corner-code corner-c">[IZ_STUDIOS // DECOMPOSITION]</div>
+
+  <main class="app-shell">
+
+    <!-- PART 2: PUBLIC VIEWS -->
+    <section id="home" class="view visible">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">INDEPENDENT AUDIO EXCHANGE / 001</p>
+          <h1>MAKE<br><em>NOISE.</em></h1>
+          <p class="hero-intro">A trading floor for instruments, effects, experiments and sonic artifacts made outside the mainstream.</p>
+          <div class="signal-readout"><span>55HZ</span><i></i><span>140HZ LP</span><i></i><span>LIVE</span></div>
+          <button id="audition-button" class="primary-command" type="button">[AUDITION_CANVAS_SIGNATURE]</button>
+          <p id="audio-status" class="status-line">[AUDIO // STANDBY]</p>
+        </div>
+
+        <div class="login-card glass-panel">
+          <div class="lock-mark">♙</div>
+          <p class="eyebrow">SECURE ARTIST GATEWAY</p>
+          <h2>ARTIST_CORE_LOGIN</h2>
+          <p class="login-hint">Perfect your sound. Trade your work. Keep the signal moving.</p>
+
+          <div class="auth-tabs">
+            <button class="auth-tab active" data-auth-mode="login" type="button">LOGIN</button>
+            <button class="auth-tab" data-auth-mode="create" type="button">CREATE_ACCOUNT</button>
+          </div>
+
+          <form id="auth-form">
+            <label for="auth-username">ARTIST_ID //</label>
+            <input id="auth-username" name="username" autocomplete="username" required placeholder="ARTIST_NAME">
+
+            <div id="email-field" class="hidden">
+              <label for="auth-email">EMAIL //</label>
+              <input id="auth-email" name="email" type="email" autocomplete="email" placeholder="artist@example.com">
+            </div>
+
+            <label for="auth-password">SECURE_KEY //</label>
+            <input id="auth-password" name="password" type="password" autocomplete="current-password" required placeholder="••••••••">
+
+            <button id="auth-submit" class="primary-command" type="submit">[INITIALIZE_ENGINE]</button>
+            <p id="auth-status" class="status-line" role="status">[GATE // READY]</p>
+          </form>
+
+          <div class="core-meter"><span></span></div>
+          <small>LOCAL ACCOUNT ENGINE // WEB CRYPTO // INDEXEDDB</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="shop" class="view hidden">
+      <div class="page-panel glass-panel">
+        <div class="section-heading">
+          <p class="eyebrow">MARKET FLOOR / COMMUNITY RANKING</p>
+          <h2>Plugin Exchange</h2>
+          <p>Each signed-in account can applaud a plugin once. Every new vote increases its displayed exchange value.</p>
+        </div>
+        <div id="plugin-grid" class="plugin-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="about" class="view hidden">
+      <div class="page-panel glass-panel">
+        <p class="eyebrow">ABOUT / BZAUDIO</p>
+        <h2>Built around exchange.</h2>
+        <div class="manifesto-grid">
+          <article><span>01</span><h3>DISCOVER</h3><p>Find independent plugins, instruments and experiments without a noisy recommendation layer.</p></article>
+          <article><span>02</span><h3>APPLAUD</h3><p>Community votes move a plugin's score and exchange value. One account gets one vote per plugin.</p></article>
+          <article><span>03</span><h3>COMMIT</h3><p>Leave comments, feedback and technical notes directly on another artist's plugin page.</p></article>
+          <article><span>04</span><h3>BARTER</h3><p>Offer one of your plugins for another creator's plugin and manage the trade from your account.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="view hidden">
+      <div class="page-panel glass-panel">
+        <div class="section-heading">
+          <p class="eyebrow">BARTER DESK / DIRECT TRANSMISSION</p>
+          <h2>Build a trade.</h2>
+          <p>For users who prefer email, package an offer and open the browser's mail client.</p>
+        </div>
+        <form id="barter-form" class="barter-form">
+          <div class="barter-columns">
+            <fieldset><legend>OUTGOING ASSETS</legend><div id="outgoing-list"><div class="input-row"><input name="outgoing[]" required placeholder="Plugin / asset name"><button type="button" class="remove-input">×</button></div></div><button id="add-outgoing" class="text-button" type="button">[+ ADD ASSET]</button></fieldset>
+            <fieldset><legend>SEEKING TARGETS</legend><div id="seeking-list"><div class="input-row"><input name="seeking[]" required placeholder="Wanted plugin / target"><button type="button" class="remove-input">×</button></div></div><button id="add-seeking" class="text-button" type="button">[+ ADD TARGET]</button></fieldset>
+          </div>
+          <label for="trader-note">NOTE //</label>
+          <textarea id="trader-note" name="note" rows="6" placeholder="Optional context..."></textarea>
+          <button class="primary-command" type="submit">[TRANSMIT_BARTER_PACKAGE]</button>
+          <p id="barter-status" class="status-line"></p>
+        </form>
+      </div>
+    </section>
+
+    <dialog id="account-dialog" class="modal glass-panel">
+      <button class="modal-close" data-close-dialog type="button">×</button>
+      <div id="account-content"></div>
+    </dialog>
+
+    <dialog id="plugin-dialog" class="modal plugin-modal">
+      <button class="modal-close" data-close-dialog type="button">×</button>
+      <div id="plugin-detail"></div>
+    </dialog>
+
+  </main>
+
+  <footer class="site-footer"><span>BPLUGINS / BZAUDIO</span><span>HANDWRITTEN VANILLA WEB SYSTEM // 2026</span></footer>
+
+  <!-- PART 3: PUBLIC INTERACTION -->
+  <script src="./app.js" defer></script>
+</body>
+</html>

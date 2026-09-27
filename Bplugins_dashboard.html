@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Bplugins // Artist Workbench</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="dashboard-page">
+
+  <!-- PART 1: USER WORKBENCH -->
+  <header class="site-header">
+    <a class="brand" href="./index.html">BPLUGINS <span>//</span> BZAUDIO</a>
+    <div class="dashboard-actions"><span id="dashboard-user" class="status-chip">LOADING</span><button id="dashboard-logout" class="ghost-button" type="button">[LOGOUT]</button></div>
+  </header>
+
+  <main class="dashboard-shell">
+    <div class="corner-code corner-a">[ARTIST // WORKBENCH]</div>
+    <div class="corner-code corner-c">[LOCAL_DB // INDEXEDDB]</div>
+
+    <section class="page-panel glass-panel">
+      <div class="section-heading"><p class="eyebrow">CREATOR STUDIO / UPLOAD</p><h1>Publish a Plugin</h1><p>Upload a plugin package, a cover image, an audio sample and the description. The browser stores the files in IndexedDB so this GitHub Pages build does not need a server.</p></div>
+      <form id="plugin-upload-form" class="upload-form">
+        <div class="form-grid">
+          <div><label for="plugin-name">PLUGIN NAME //</label><input id="plugin-name" name="name" required maxlength="80"></div>
+          <div><label for="plugin-base-value">START VALUE //</label><input id="plugin-base-value" name="baseValue" type="number" min="1" max="1000000" value="25" required></div>
+        </div>
+        <label for="plugin-description">DESCRIPTION //</label>
+        <textarea id="plugin-description" name="description" rows="7" required maxlength="3000"></textarea>
+        <div class="form-grid">
+          <div><label for="plugin-package">PLUGIN FILE // .ZIP .VST3 .CLAP...</label><input id="plugin-package" name="pluginFile" type="file" required></div>
+          <div><label for="plugin-image">COVER IMAGE //</label><input id="plugin-image" name="image" type="file" accept="image/*" required></div>
+        </div>
+        <label for="plugin-audio">AUDIO SAMPLE // MP3 WAV OGG M4A</label>
+        <input id="plugin-audio" name="audio" type="file" accept="audio/*" required>
+        <div id="upload-preview" class="upload-preview"></div>
+        <button class="primary-command" type="submit">[PUBLISH_TO_FLOOR]</button>
+        <p id="upload-status" class="status-line"></p>
+      </form>
+    </section>
+
+    <!-- PART 2: PERSONAL INVENTORY / TRADES -->
+    <section class="page-panel glass-panel">
+      <div class="section-heading compact"><p class="eyebrow">MY ASSETS</p><h2>Your Plugins</h2></div>
+      <div id="my-plugins" class="plugin-grid"></div>
+    </section>
+
+    <section class="page-panel glass-panel">
+      <div class="section-heading compact"><p class="eyebrow">TRADE DESK</p><h2>Incoming & outgoing trades</h2></div>
+      <div id="my-trades" class="trade-list"></div>
+    </section>
+
+    <!-- PART 3: CURATOR SHORTCUT -->
+    <section class="critical-panel glass-panel">
+      <div><p class="eyebrow">PRIVATE CURATOR ROUTE</p><p>Need the curator workbench?</p></div>
+      <a class="danger-button" href="./admin.html">[CURATOR_GATEWAY]</a>
+    </section>
+  </main>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
